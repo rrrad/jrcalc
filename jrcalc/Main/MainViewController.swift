@@ -103,7 +103,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                                      height: 44.0)
         callHistoryButton.frame = rectButton
 
-        historyViewController.view.frame = CGRect.init(x: 0, y: 0, width: view.bounds.width*0.9, height: view.bounds.height)
+        historyViewController.view.frame = CGRect.init(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
         
     }
     

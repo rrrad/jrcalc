@@ -11,14 +11,15 @@ import UIKit
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let historyTableView = UITableView()
-    let dataProvider = HistoryDataProvider()
+    //let dataProvider = HistoryDataProvider()
     
     private lazy var buttonDismiss: UIButton = {
         let button = UIButton()
-        button.setTitle("DISMISS", for: .normal)
+        button.setTitle("|||", for: .normal)
         button.backgroundColor = UIColor.red
         button.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame.size = CGSize.init(width: 44.0, height: 44.0)
         return button
     }()
     
@@ -31,20 +32,28 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         historyTableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: "headerCell")
         
         historyTableView.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.darkGray
+        view.backgroundColor = UIColor.clear
         view.addSubview(historyTableView)
         view.addSubview(buttonDismiss)
     }
     
     override func viewDidLayoutSubviews() {
+        var topSafeArea: CGFloat
+        
+        if #available(iOS 11.0, *){
+            topSafeArea = view.safeAreaInsets.top
+        } else {
+            topSafeArea = topLayoutGuide.length
+        }
+        
         historyTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         historyTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         historyTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        historyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        historyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44.0).isActive = true
         
-        buttonDismiss.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonDismiss.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-
+        buttonDismiss.topAnchor.constraint(equalTo: view.topAnchor, constant: ScreenView.Const.elementOffset + topSafeArea).isActive = true
+        buttonDismiss.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0).isActive = true
+        
     }
     
 @objc
