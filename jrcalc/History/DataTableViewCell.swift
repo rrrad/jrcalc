@@ -15,7 +15,7 @@ class DataTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
        label.numberOfLines = 1
         label.textAlignment = .left
-        
+        label.text = "123456789123450"
         label.backgroundColor = UIColor.red
         return label
     }()
@@ -41,6 +41,7 @@ class DataTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
+        
             setConstraint()
     }
     
@@ -72,16 +73,31 @@ class DataTableViewCell: UITableViewCell {
     }
     
     private func dataLabelConfig(){
+        var widthDataLabel: CGFloat
+        
+        if let text = dataLabel.text {
+            let size: CGSize = text.size(withAttributes: [NSAttributedString.Key.font : dataLabel.font])
+            switch Int(size.width){
+            case ..<100 : widthDataLabel = 100.0
+            default: widthDataLabel = size.width
+            }
+        }else {
+            widthDataLabel = 100.0
+        }
+        
+        
+        
+        
         dataLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
-        dataLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8.0).isActive = true
-        dataLabel.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
+        dataLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: Const.elementOffset).isActive = true
+        dataLabel.widthAnchor.constraint(equalToConstant: widthDataLabel).isActive = true
         dataLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
     }
     
     private func commentTextFieldConfig(){
-        commentTextField.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 2.0).isActive = true
+        commentTextField.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: Const.offsetVerticalInCell).isActive = true
         commentTextField.leadingAnchor.constraint(equalTo: dataLabel.trailingAnchor).isActive = true
         commentTextField.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
-        commentTextField.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -2.0).isActive = true
+        commentTextField.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -Const.offsetVerticalInCell).isActive = true
     }
 }

@@ -50,9 +50,3 @@ class ScreenView: UIView {
 
 }
 
-extension ScreenView {
-    enum Const {
-        static let elementOffset: CGFloat = 8.0
-        static let signWidgh: CGFloat = 20.0
-    }
-}

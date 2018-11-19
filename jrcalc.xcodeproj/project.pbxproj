@@ -11,6 +11,8 @@
 		86F80F90218E3B5C005BF316 /* HistoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F80F8F218E3B5C005BF316 /* HistoryDataProvider.swift */; };
 		86F80F9A21901FAC005BF316 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F80F9921901FAC005BF316 /* DataTableViewCell.swift */; };
 		86F80F9C219020B1005BF316 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F80F9B219020B1005BF316 /* HeaderTableViewCell.swift */; };
+		86F80F9E21A150E8005BF316 /* HeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F80F9D21A150E8005BF316 /* HeaderButton.swift */; };
+		86F80FA621A32E16005BF316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F80FA521A32E16005BF316 /* Constants.swift */; };
 		A3D56E98217C724B007385C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D56E97217C724B007385C0 /* AppDelegate.swift */; };
 		A3D56E9A217C724B007385C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D56E99217C724B007385C0 /* MainViewController.swift */; };
 		A3D56E9F217C724D007385C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D56E9E217C724D007385C0 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		86F80F8F218E3B5C005BF316 /* HistoryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataProvider.swift; sourceTree = "<group>"; };
 		86F80F9921901FAC005BF316 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		86F80F9B219020B1005BF316 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		86F80F9D21A150E8005BF316 /* HeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderButton.swift; sourceTree = "<group>"; };
+		86F80FA521A32E16005BF316 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A3D56E94217C724B007385C0 /* jrcalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jrcalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D56E97217C724B007385C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D56E99217C724B007385C0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A3D56E97217C724B007385C0 /* AppDelegate.swift */,
+				86F80FA521A32E16005BF316 /* Constants.swift */,
 				86F80F8F218E3B5C005BF316 /* HistoryDataProvider.swift */,
 				A3D56EB5217C935C007385C0 /* Main */,
 				A3D56EB6217C9384007385C0 /* History */,
@@ -106,6 +111,7 @@
 				A3D56EA9217C8DD2007385C0 /* HistoryViewController.swift */,
 				86F80F9921901FAC005BF316 /* DataTableViewCell.swift */,
 				86F80F9B219020B1005BF316 /* HeaderTableViewCell.swift */,
+				86F80F9D21A150E8005BF316 /* HeaderButton.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -191,8 +197,10 @@
 				A3D56EB2217C9301007385C0 /* NumberView.swift in Sources */,
 				86F80F9C219020B1005BF316 /* HeaderTableViewCell.swift in Sources */,
 				A3D56EBB2181C555007385C0 /* ButtonCollectionViewCell.swift in Sources */,
+				86F80F9E21A150E8005BF316 /* HeaderButton.swift in Sources */,
 				86F80F8E218AA44F005BF316 /* SideAnimtor.swift in Sources */,
 				A3D56E98217C724B007385C0 /* AppDelegate.swift in Sources */,
+				86F80FA621A32E16005BF316 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

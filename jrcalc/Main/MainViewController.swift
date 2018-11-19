@@ -37,7 +37,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         screenView = screenViewXib.instantiate(withOwner: nil, options: nil).first as? ScreenView
 
 // отступ для кнопки вызова истории
-        screenView.setOffset(ofX: 44.0, ofY: 44.0)
+        screenView.setOffset(ofX: Const.sizeButtonShowHistory, ofY: Const.sizeButtonShowHistory)
         
 // установка клавиатуры
         let numberViewXib = UINib.init(nibName: "NumberView", bundle: nil)
@@ -97,10 +97,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         buttonCollectionView.frame = rect
         layout.itemSize = CGSize.init(width: view.bounds.width/4, height: lineHeight)
         
-        let rectButton = CGRect.init(x: ScreenView.Const.elementOffset,
-                                     y: topSafeArea+ScreenView.Const.elementOffset,
-                                     width: 44.0,
-                                     height: 44.0)
+        let rectButton = CGRect.init(x: Const.elementOffset,
+                                     y: topSafeArea+Const.elementOffset,
+                                     width: Const.sizeButtonShowHistory,
+                                     height: Const.sizeButtonShowHistory)
         callHistoryButton.frame = rectButton
 
         historyViewController.view.frame = CGRect.init(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)

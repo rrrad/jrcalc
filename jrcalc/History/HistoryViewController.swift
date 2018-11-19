@@ -19,7 +19,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         button.backgroundColor = UIColor.red
         button.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.frame.size = CGSize.init(width: 44.0, height: 44.0)
         return button
     }()
     
@@ -49,10 +48,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         historyTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         historyTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         historyTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        historyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44.0).isActive = true
+        historyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Const.offsetTableViewInHistory).isActive = true
         
-        buttonDismiss.topAnchor.constraint(equalTo: view.topAnchor, constant: ScreenView.Const.elementOffset + topSafeArea).isActive = true
-        buttonDismiss.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0).isActive = true
+
+        buttonDismiss.widthAnchor.constraint(equalToConstant: Const.offsetTableViewInHistory).isActive = true
+        buttonDismiss.heightAnchor.constraint(equalToConstant: Const.sizeButtonShowHistory).isActive = true
+        buttonDismiss.topAnchor.constraint(equalTo: view.topAnchor, constant: Const.elementOffset + topSafeArea).isActive = true
+        buttonDismiss.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
     }
     
@@ -65,6 +67,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
